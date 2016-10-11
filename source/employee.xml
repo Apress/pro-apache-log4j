@@ -1,0 +1,20 @@
+<record>
+<employee>
+ <code>100</code>
+ <name>Sam</name>
+ <dept>Dev</dept>
+ <age>22</age>
+</employee>
+<employee>
+ <code>101</code>
+ <name>paul</name>
+ <dept>Dev</dept>
+ <age>38</age>
+</employee>
+<employee>
+ <code>102</code>
+ <name>derek</name>
+ <dept>Sales</dept>
+ <age>43</age>
+</employee>
+</record>

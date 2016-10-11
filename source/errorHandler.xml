@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+ <appender name="FILE" class="org.apache.log4j.FileAppender">
+    <param name="file" value="${user.home}/backup.log"/>
+    <param name="append" value="true"/>
+
+    <layout class="org.apache.log4j.SimpleLayout"/>
+
+ </appender>
+
+ <appender name="JDBC" class="org.apache.log4j.jdbc.JDBCAppender">
+   
+   <errorHandler class="com.apress.logging.log4j.CustomErrorHandler">
+    <logger-ref ref="com.apress.logging.log4j"/>
+    <appender-ref ref="FILE"/>
+   </errorHandler>
+
+   <param name="URL" value="jdbc:odbc:dbdef"/>
+   <param name="user" value="system"/>
+   <param name="password" value="manager"/>
+   <param name="sql" value="INSERT INTO LOGGING_DATA VALUES('%x','%d{yyyy-MM-dd}','%C','%p','%m')"/>
+  
+ </appender>
+
+
+ <logger name="com.apress.logging.log4j">
+   <level value="debug"/>
+   <appender-ref ref="JDBC"/>
+ </logger>
+
+ 
+</log4j:configuration>
+

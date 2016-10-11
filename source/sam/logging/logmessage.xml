@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2002-08-15T20:40:38</date>
+  <millis>1029440438292</millis>
+  <sequence>0</sequence>
+  <level>INFO</level>
+  <thread>10</thread>
+  <message>XML message..</message>
+</record>

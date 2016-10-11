@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+ 
+ <appender name="A1" class="org.apache.log4j.ConsoleAppender">
+   
+   <layout class="org.apache.log4j.PatternLayout">
+     <param name="ConversionPattern" value="%t %-5p %c{2} - %m%n"/>
+   </layout>
+
+   <filter class="org.apache.log4j.varia.LevelRangeFilter">
+     <param name="LevelMin" value="DEBUG"/>
+     <param name="LevelMax" value="WARN"/>
+     <param name="acceptOnMatch" value="true"/>
+   </filter>
+
+ </appender>
+
+ <logger name="com.apress.logging.log4j">
+   <level value="debug"/>
+   <appender-ref ref="A1"/>
+ </logger>
+
+ 
+</log4j:configuration>
+

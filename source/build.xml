@@ -1,0 +1,34 @@
+<project name="logging" default="compile" basedir=".">
+    <!--setting the global properties-->
+    <property name="src" location="."/>
+    <property name="build" location="build"/>
+    <property name="dist" location="dist"/>
+
+    <!-- Defining the init target-->
+    <target name="init">
+        <mkdir dir="${build}"/>
+        <mkdir dir="${dist}"/>
+    </target>
+
+    <!--Defining the compile target-->
+    <target name="compile" depends="init">
+        <echo message="The base dir: ${basedir}"/>
+        <javac srcdir="${src}" destdir="${build}">
+        <classpath path=".">
+            <!--sepcify all jars in the lib directory-->
+            <fileset dir="lib">
+                <include name="**/*.jar"/>
+            </fileset>
+        </classpath>
+        </javac>
+        <echo message="Building jar: logging.jar"/>
+        <jar destfile="${dist}/logging.jar" basedir="${build}"/>
+        <echo message="successful build, placed the logging.jar in ${dist}"/>
+    </target>
+
+    <!--Defining the cleaning target-->
+    <target name="clean">
+        <delete dir="${build}"/>
+        <delete dir="${dist}"/>
+    </target>
+</project>

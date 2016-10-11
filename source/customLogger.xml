@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+ <appender name="A1" class="org.apache.log4j.ConsoleAppender">
+   
+   <layout class="org.apache.log4j.PatternLayout">
+     <param name="ConversionPattern" value="%t %-5p %c{2} - %m%n"/>
+   </layout>
+
+ </appender>
+
+ <logger name="com.apress.logging.log4j">
+   <level value="TRACE" class="com.apress.logging.log4j.CustomLevel"/>
+   <appender-ref ref="A1"/>
+ </logger>
+
+ <categoryFactory class="com.apress.logging.log4j.CustomLoggerFactory"/>
+
+ 
+</log4j:configuration>
+
